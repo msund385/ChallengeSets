@@ -45,7 +45,7 @@ namespace ChallengeSets
             return num % 2 != 0;
         }
 
-        
+
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
@@ -95,7 +95,7 @@ namespace ChallengeSets
                 return 0;
             }
             int evens = 0;
-            foreach(var x in numbers)
+            foreach (var x in numbers)
             {
                 if (x % 2 == 0)
                 {
@@ -124,7 +124,7 @@ namespace ChallengeSets
                 {
                     return false;
                 }
-                
+
             }
             return true;
 
@@ -137,10 +137,9 @@ namespace ChallengeSets
                 return 0;
             }
             return number / 2;
-           
+
         }
 
-           
 
 
 
@@ -154,18 +153,19 @@ namespace ChallengeSets
 
 
 
-        
 
 
 
 
-        
 
-        
+
+
+
+
     }
-      
+
 }
-       
+
 
 
 

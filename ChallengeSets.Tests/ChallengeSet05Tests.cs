@@ -110,7 +110,8 @@ namespace ChallengeSets.Tests
         [InlineData(null, 0)]
         public void SumElementsThaFollowAnEven(int[] numbers, int expected)
         {
-            // Arrange
+            // Arrangeturn a string array into a sentence
+
             ChallengeSet05 challenger = new ChallengeSet05();
 
             // Act
