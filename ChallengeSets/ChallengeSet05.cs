@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Xml;
+using System.Xml.Schema;
 
 namespace ChallengeSets
 {
@@ -24,36 +25,57 @@ namespace ChallengeSets
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
+            for(int i = 0; i < businesses.Length; i++)
+            {
 
-            throw new NotImplementedException();
+                if (businesses[i].TotalRevenue == 0)
+                {
+                    businesses[i].Name = "CLOSED";
+                }
+            }
+                
+                    
 
         }
 
-        
-                public bool IsAscendingOrder(int[] numbers)
+
+
+            public bool IsAscendingOrder(int[] numbers)
+            {
+                if (numbers == null || numbers.Length == 0)
                 {
-                  if (numbers == null || numbers.Length == 0)
-                  {
                     return false;
-                  }
-                  for(int i = 1; i < numbers.Length; i++)
-                  {
-                 
+                }
+                for (int i = 1; i < numbers.Length; i++)
+                {
+
                     if (numbers[i - 1] > numbers[i])
                     {
-                     return false;
+                        return false;
                     }
-                 
-                  }
-                     return true;
-          
+
                 }
+                return true;
 
-        public int SumElementsThatFollowAnEven(int[] numbers)
-        {
-            throw new NotImplementedException();
-        }
+            }
 
+            public int SumElementsThatFollowAnEven(int[] numbers)
+            {
+                if (numbers == null || numbers.Length == 0)
+                {
+                    return 0;
+                }
+                var nums = 0;
+                for (int i = 1; i < numbers.Length; i++)
+                {
+
+                    if (numbers[i - 1] % 2 == 0)
+                    {
+                        nums += numbers[i];
+                    }
+                }
+                return nums;
+            }
         public string TurnWordsIntoSentence(string[] words)
         {
             string sent = "";// = "" initizlizes empty string
@@ -103,12 +125,23 @@ namespace ChallengeSets
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-
-            throw new NotImplementedException();
+            for(int i = 0; i < nums.Length; i++)
+            {
+                for(int j = i  + 1; j < nums.Length; j++)
+                {
+                    if(nums[i] + nums[j] == targetNumber)
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+            return false;
 
 
 
         }
         
     }
+    
 }
